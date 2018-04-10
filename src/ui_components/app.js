@@ -14,6 +14,7 @@ const settings = require('./settings.js');
 const embededSite = require('./embededSite.js')
 //logic
 const locationManager = require('../business_components/locationManager.js');
+const vibrationManager = require('../business_components/vibrationManager.js');
 const logger = require('../business_components/logger.js');
 
 
@@ -111,6 +112,7 @@ class App extends React.Component {
         return (
             <Ons.Toolbar>
                 <div className='center'>{titles[this.state.index]}</div>
+                <button onClick={vibrationManager.vibrate}>Vibration</button>
                 <div className='right'>
                     <Ons.ToolbarButton onClick={this.show}>
                         <Ons.Icon icon='ion-navicon, material:md-menu'></Ons.Icon>
